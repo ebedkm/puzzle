@@ -9,16 +9,17 @@
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <canvas id="myCanvas" width="800" height="800"></canvas>
     <script>
     window.onload = function(){
       var image = new Object;
-      image.width = 200;
-      image.height = 137;
+      image.width = 800;
+      image.height = 800;
 
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-      var size = 2;
+      var size = 6;
+      var div = size/2;
       var Map = new Array;
       for(i = 0; i < size; i++){
         Map[i] = new Array;
@@ -27,8 +28,8 @@
             console.log(i + " " + j)
             box.width = image.width/size;
             box.height = image.height/size;
-            box.x = i*box.width;
-            box.y = j*box.height;
+            box.x = i*box.width*1.05;
+            box.y = j*box.height*1.05;
 
             Map[i][j] = box;
         }
@@ -40,11 +41,11 @@
             for(i = 0; i < size; i++){
               for(j = 0; j < size; j++){
                 console.log(i + " " + j )
-                context.drawImage(imageObj, Map[i][j].x, Map[i][j].y, Map[i][j].width, Map[i][j].height);
+                context.drawImage(imageObj, Map[i][j].x, Map[i][j].y, Map[i][j].width, Map[i][j].height, Map[i][j].x, Map[i][j].y , Map[i][j].width, Map[i][j].height);
               }
             }
           }
-          imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+          imageObj.src = 'http://localhost/puzzle/gambar.jpg';
       
     }
       
